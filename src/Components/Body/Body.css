@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,100&display=swap');
 :root {
     --primary: #1e90ff;
+    --content: rgba(46, 0, 0, 0.344);
+    --form:rgba(0,0,7,0.75);
     --secondary: #ffffff;
   }
 /* GENERAL RESETS */
@@ -32,7 +34,7 @@ body {
     font: 16px/26px "Raleway", sans-serif;
     text-align: center;
     height: 100%;
-    background-image: url(https://images.unsplash.com/photo-1603741209938-50fc882da856?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8);
+    background: url("../../../public/img/fondo.webp");
     background-size: cover;
     overflow:hidden;
 }
@@ -129,12 +131,17 @@ a.button:hover {
     width: 100%;
     height: 100vh;
     overflow: auto;
-    background:rgba(0,0,0,0.75);
+        /* From https://css.glass */
+        background: var(--form);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(1.7px);
+        -webkit-backdrop-filter: blur(1.7px);
+        border: 1px solid var(--form);
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
     border-radius: 0;
-    border-top: 1px solid #4FC1B7;
 }
 .user .actions {
     margin: 1em 0 0;
@@ -299,7 +306,7 @@ a.button:hover {
     margin: 0 auto;
     width: 100%;
     height: 40px;
-    background: rgba(5, 11, 39,0.8);
+    background: var(--content);
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
@@ -517,25 +524,17 @@ a.button:hover {
     background-size: cover;
 }
 #slideshow .one {
-    background-image: url("http://res.cloudinary.com/dpcloudinary/image/upload/v1506186248/dots.png");
+    
+    background-image: url("../../../public/img/tiger-tooth.png");
     background-repeat: no-repeat;
     background-position: 0% 50%;
 }
 #slideshow .two {
-    background-image: url("http://res.cloudinary.com/dpcloudinary/image/upload/v1506186248/gears.png");
+    background-image: url("../../../public/img/polygon.png");
     background-repeat: no-repeat;
     background-position: 0% 50%;
 }
-#slideshow .three {
-    background-image: url("http://res.cloudinary.com/dpcloudinary/image/upload/v1506186248/splat.png");
-    background-repeat: no-repeat;
-    background-position: 0% 5%;
-}
-#slideshow .four {
-    background-image: url("http://res.cloudinary.com/dpcloudinary/image/upload/v1506186248/ray.png");
-    background-repeat: no-repeat;
-    background-position: 0% 50%;
-}
+
 
 /* FORM ELEMENTS */
 input {
@@ -775,16 +774,10 @@ input {
         background-size: auto;
     }
     #slideshow .one {
-        background-position: 50% 130%;
+        background-position: 50% 100%;
     }
     #slideshow .two {
-        background-position: 50% 200%;
-    }
-    #slideshow .three {
-        background-position: 50% 300%;
-    }
-    #slideshow .four {
-        background-position: -40% -80%;
+        background-position: 50% 100%;
     }
 
     /* CONTENT */
