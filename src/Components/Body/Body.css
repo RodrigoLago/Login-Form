@@ -31,7 +31,7 @@ a:hover {
 body {
     position: relative;
     color: #666;
-    font: 16px/26px "Raleway", sans-serif;
+    font: 16px/26px "Poppins", sans-serif;
     text-align: center;
     height: 100%;
     background: url("../../../public/img/fondo.webp");
