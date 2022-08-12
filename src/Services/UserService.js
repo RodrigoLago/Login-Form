@@ -56,16 +56,11 @@ export const Register = (raw) => {
     fetch(`${baseUrl}/register`, requestOptions)
         .then(response => response.text())
         .then(result => {
-            if (JSON.parse(result).status == 400) {
-                console.log("ERROR 400")
-                $('.errorlogin').fadeIn(500);
-                $('.errorlog').removeClass('transform-out').addClass('transform-in');
+            if (JSON.parse(result).status == 200) {
+                $('.confirmRegister').fadeIn(500);
+                $('.confirmReg').removeClass('transform-out').addClass('transform-in');
                 e.preventDefault();
             }
-            else {
-
-            }
-
         })
         .catch(error => console.log('error', error));
 }
