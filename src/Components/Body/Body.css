@@ -4,6 +4,7 @@
     --primary: #1e90ff;
     --content: rgba(46, 0, 0, 0.344);
     --form:rgba(0,0,7,0.75);
+    --lines:rgb(168, 255, 211);
     --secondary: #ffffff;
   }
 /* GENERAL RESETS */
@@ -11,6 +12,9 @@
     margin: 0;
     padding: 0;
 }
+::-ms-reveal {
+    filter: invert(100%);
+  }
 input:-webkit-autofill {       transition: all 0s 500s;     }
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
@@ -34,7 +38,7 @@ a {
     text-decoration: none;
 }
 a:hover {
-    color: #4FDA8C;
+    color: #00ff9d;
 }
 
 /* BODY */
@@ -73,7 +77,7 @@ a.button {
     transition: all .2s ease-in-out;
 }
 a.button:hover {
-    border-color: #2D515C;
+    border-color: #00ff9d;
     color: #fff;
     padding: 1.0rem 3.2rem;
 }
@@ -557,7 +561,7 @@ input {
 .form-wrap a {
     color: #ccc;
     padding-bottom: 4px;
-    border-bottom: 1px solid #5FD1C1;
+    border-bottom: 1px solid var(--lines);
 }
 .form-wrap a:hover {
     color: #fff;
@@ -590,7 +594,7 @@ input {
 }
 .form-wrap .tabs h3 a.active span {
     padding-bottom: 4px;
-    border-bottom: 1px solid #5FD1C1;
+    border-bottom: 1px solid var(--lines);
 }
 .form-wrap .tabs-content {
     padding: 1.5em 3em;
@@ -771,7 +775,7 @@ input {
     }
     #slideshow h2 span {
         padding: 5px 0;
-        border: solid #B6EDE3;
+        border: solid var(--lines);
         border-width: 1px 0;
     }
     #slideshow p {

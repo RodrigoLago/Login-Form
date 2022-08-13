@@ -4,10 +4,11 @@ import './Button.css'
 import './Body.css'
 import { Login, Register } from '../../Services/UserService';
 import { Terms } from '../Tems/Terms';
-import { Logo } from '../Logo/Logo';
 import { Slideshow } from '../Slideshow/Slideshow';
 import { Recovery } from '../Recovery/Recovery';
-import { Popup } from '../Popup/Popup';
+import { PopupLogin, PopupRegister, RenderPopup } from '../Popup/Popup';
+
+
 
 export const Body = () => {
   const [loginForm, setDetails] = useState({
@@ -31,7 +32,6 @@ export const Body = () => {
     passCmRegister: "",
   });
   const registerChange = (e) => {
-    console.log(e.target.name)
     const { name, value } = e.target;
     if (name == "nameRegister") {
       registerForm.nameRegister = value
@@ -54,9 +54,10 @@ export const Body = () => {
     event.preventDefault();
     Login(loginForm)
   };
+
   const registerSubmit = () => {
     event.preventDefault();
-    Register(registerForm)
+    Register(registerForm, RenderPopup)
   };
 
   return <div>
@@ -77,8 +78,9 @@ export const Body = () => {
         {/* RECOVERY */}
         <Recovery />
         {/* POPUPS */}
-        <Popup />
-        {/* SLIDER */}
+        <PopupLogin />
+        <PopupRegister />
+        {/*SLIDER */}
         <div className="content">
           {/* LOGO 
           <Logo />*/}
@@ -121,7 +123,9 @@ export const Body = () => {
                     id="user_login"
                     autoComplete="off"
                     placeholder="Email"
+                    required
                     onChange={loginChange}
+
                   />
                   <input
                     name="passLogin"
@@ -174,6 +178,7 @@ export const Body = () => {
                     id="user_name"
                     autoComplete="off"
                     placeholder="Nombre"
+                    required
                     onChange={registerChange}
                   />
                   <input
@@ -183,6 +188,7 @@ export const Body = () => {
                     id="last_name"
                     autoComplete="off"
                     placeholder="Apellido"
+                    required
                     onChange={registerChange}
                   />
                   <input
@@ -192,6 +198,7 @@ export const Body = () => {
                     id="user_email"
                     autoComplete="off"
                     placeholder="Email"
+                    required
                     onChange={registerChange}
                   />
                   <input
